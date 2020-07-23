@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_fields_tasks",
+  "info": {
+    "name": "tasks",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "task": {
+      "type": "string"
+    }
+  }
+}

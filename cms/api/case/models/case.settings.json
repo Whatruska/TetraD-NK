@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "name": "Case"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "desc": {
+      "type": "richtext"
+    },
+    "target": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "other": {
+      "type": "string"
+    },
+    "tasks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "fields.tasks"
+    }
+  }
+}

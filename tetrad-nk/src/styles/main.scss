@@ -1,0 +1,45 @@
+@import "./_vars.scss";
+@import "./header.scss";
+@import "./footer.scss";
+@import "./offer.scss";
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;700&display=swap');
+
+body{
+  font-family: 'Exo 2';
+  margin: 0px 0px;
+  overflow-x: hidden;
+}
+
+button{
+  outline: none;
+  font-size: 16px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+main, footer{
+  padding: 20px 10vw;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 420px) {
+  main, footer {
+    padding: 20px 5vw;
+  }
+}
+
+@media (max-height: 420px) {
+  main, footer {
+    padding: 20px 5vw;
+  }
+}
+
