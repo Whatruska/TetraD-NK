@@ -1,4 +1,4 @@
-
+@import "./vars.scss";
 header{
   display: flex;
   flex-direction: row;
@@ -21,7 +21,7 @@ header{
     font-family: monospace;
     overflow: hidden;
     width: fit-content;
-    border-right: .15em solid $accent-orange;
+    border-right: .15em solid transparent;
     white-space: nowrap;
     letter-spacing: .1em;
     animation:
@@ -33,13 +33,14 @@ header{
   }
 
   &-button{
+    font-size: 18px;
     color: $accent-blue;
-    box-shadow: 3px 3px 20px $accent-blue;
+    box-shadow: 3px 3px 15px $accent-blue;
     transition: .3s all linear;
     &:hover{
       color: white;
       background-color: $accent-blue-light;
-      box-shadow: 3px 3px 5px $accent-blue-light;
+      box-shadow: 3px 3px 10px $accent-blue-light;
     }
   }
 }

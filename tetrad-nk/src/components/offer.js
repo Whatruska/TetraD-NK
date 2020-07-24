@@ -1,61 +1,66 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { motion } from "framer-motion";
 import { Link } from "gatsby";
+import graph from "../images/graph.jpeg";
+import scrap from "../images/scpars.png";
+import mac from "../images/mac-2.png";
+import screen from "../images/screen.png";
 
 export default function Offer() {
-    const data = useStaticQuery(graphql`
-        query MyQuery {
-          allCases {
-            edges {
-              node {
-                name
-                desc
-                other
-                price
-                target
-                solution
-                time
-                tasks {
-                  task
-                }
-                img {
-                   name
-                }
-              }
-            }
-          }
-        }`
-    );
-    const cases = data.allCases.edges.map(elem => elem.node);
     return (
     <div className="offer">
         <div className="offer-main">
-            <p>Дешевлее на <b>20%</b> рынка.</p>
-            <p>Делаем сайт <b>от 3-х дней.</b></p>
-            <p>Почему быстро? Технологии которые использует <b>Facebook.</b></p>
-            <p>Пишем быстро, потому что исползуем <b>Python + JS.</b></p>
-            <p>Пишем качественно, потому что <b>рисуем макеты</b>, пишем <b>сценарии пользователя</b>, планируем разработку.</p>
-        </div>
-        {cases ? cases.map(elem => {
-            return (
-                <Link to={`/case/[case]`} as={`/case/${elem.name}`} style={{width: "100%"}}>
-                    <div className="offer-case">
-                        <img src={elem.img[0].name} className="offer-case-img" alt={"Offer img"}/>
-                        <div className="offer-case-main">
-                            <div className="offer-case-main-title">{elem.name}</div>
-                            <div className="offer-case-main-desc">{elem.desc}</div>
-
-                                <button className="offer-case-main-btn">Читать подробнее</button>
-
-                        </div>
+            <div className="offer-main-wrapper">
+                <div className="offer-main-list">
+                    <p>Создадим сайт от <b>3х дней</b></p>
+                    <p>Напишем <b>бесплатно</b> ТЗ</p>
+                    <p><b>Нешаблонные</b> решения</p>
+                </div>
+                <div className="offer-main-mac">
+                    <img src={mac} alt={"macbook air"}/>
+                    <div className="offer-main-abs">
+                        <img src={screen} alt={"Screen"}/>
                     </div>
-                </Link>
-            )
-        }) : <></>}
-        <motion.button
-            className="offer-callback-btn"
-        >Обсудить проект</motion.button>
+                </div>
+            </div>
+            <div className="offer-main-cta">
+                <h6>Оставьте контакты и получите скидку в 10%</h6>
+                <div className="offer-main-cta-input-wrapper">
+                    <input type="text" name="email" placeholder="Введите контакты"/>
+                    <button className="offer-callback-btn">Получить скидку</button>
+                </div>
+            </div>
+        </div>
+        <div className="promo">
+            <div className="promo-case">
+                <img src={graph} className="promo-case-bck" alt="background"/>
+                <div className="promo-case-title">
+                    Автоматизация и оцифровка бизнес-процессов
+                </div>
+                <ol className="promo-case-list">
+                    <li className="promo-case-list-item">Создаем <mark>для Клиента</mark></li>
+                    <li className="promo-case-list-item">Поднимаем <mark>статус</mark> компании</li>
+                    <li className="promo-case-list-item">Показываем сложное <mark>понятнее</mark></li>
+                    <button
+                        className="offer-callback-btn"
+                    >Обсудить проект</button>
+                </ol>
+            </div>
+            <div className="promo-case">
+                <img src={scrap} className="promo-case-bck" alt="background"/>
+                <div className="promo-case-title">
+                    Корпоративный портал
+                </div>
+                <ol className="promo-case-list">
+                    <li className="promo-case-list-item">Обрабатываем <mark>большие данные</mark></li>
+                    <li className="promo-case-list-item">Переводим бизнес-процессы в <mark>онлайн</mark></li>
+                    <li className="promo-case-list-item">Создаем <mark>понятные</mark> интерфейсы</li>
+                    <button
+                        className="offer-callback-btn"
+                    >Обсудить проект</button>
+                </ol>
+            </div>
+        </div>
     </div>
     )
 }

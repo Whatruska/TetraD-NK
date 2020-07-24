@@ -3,12 +3,86 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 0px;
+  margin-bottom: 15vh;
   &-main{
-    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
     font-weight: bold;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20vh;
+    &-wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+    &-cta{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
 
+      h6{
+        margin-top: 30px;
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      button{
+        width: fit-content;
+        font-size: 20px;
+        padding: 15px 15px;
+        margin-left: 20px;
+      }
+
+      input{
+        border-color: transparent;
+        outline: none;
+        border-bottom: 1px solid $accent-black;
+        font-size: 24px;
+        width: 30%;
+      }
+
+      &-input-wrapper{
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &-mac{
+      width: 40%;
+      transform: translateY(8vh) translateX(4vw);
+      img{
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
     b{
       color: $accent-orange;
+    }
+
+    &-abs{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Exo 2';
+      position: absolute;
+      overflow: hidden;
+      letter-spacing: .01em;
+      top: 11%;
+      right: 13%;
+      width: 74%;
+      height: 70%;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -26,9 +100,20 @@
       }
 
       button{
+        transform: translateY(0%);
         color: $accent-orange;
         background-color: white;
         box-shadow: 0px 0px 30px white;
+      }
+
+      span{
+        transition: .3s ease-in all;
+        transform: translateY(0%);
+      }
+
+      h2{
+        transition: .3s ease-in all;
+        transform: scale(1.0) translateY(0%);
       }
     }
 
@@ -57,10 +142,15 @@
         font-weight: bold;
         font-size: 32px;
         margin-bottom: 10px;
+        transform: scale(1.8) translateY(25%);
       }
 
       &-desc{
-
+        margin: 20px 0px;
+        font-size: 24px;
+        width: 50%;
+        text-align: center;
+        transform: translateY(600%);
       }
 
       &-btn{
@@ -68,6 +158,7 @@
         box-shadow: 0px 0px 30px $accent-orange;
         background-color: $accent-orange;
         transition: .3s all linear;
+        transform: translateY(600%);
         &:hover{
           color: $accent-orange;
           background-color: white;

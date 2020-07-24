@@ -2,6 +2,7 @@
 @import "./header.scss";
 @import "./footer.scss";
 @import "./offer.scss";
+@import "./promo.scss";
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;700&display=swap');
 
@@ -23,7 +24,11 @@ button{
 }
 
 main, footer{
-  padding: 20px 10vw;
+  padding: 20px 5vw;
+}
+
+span{
+  display: block;
 }
 
 a{
