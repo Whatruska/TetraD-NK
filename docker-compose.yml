@@ -1,0 +1,38 @@
+version: "3"
+
+volumes:
+  landing-volume: {}
+  cms-volume: {}
+
+services:
+  nginx:
+    image: nginx:alpine
+    restart: always
+    ports:
+    - "80:8000"
+    volumes:
+      - cms-volume:/nginx/cms/build
+      - landing-volume:/nginx/landing/build
+      - ./deploy/config.conf:/etc/nginx/config.conf
+
+  cms:
+    build:
+      dockerfile:
+        ./deploy/cms/Dockerfile
+      context: .
+    image: cms_img
+    volumes:
+      - cms-volume:/cms/build
+
+  landing:
+    build:
+      dockerfile:
+        ./deploy/tetrad_nk/Dockerfile
+      context: .
+    command: ["npm", "run", "build"]
+    image: tetradnk_img
+    depends_on:
+      - cms
+      - nginx
+    volumes:
+      - landing-volume:/landing/build

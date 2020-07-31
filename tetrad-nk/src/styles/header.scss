@@ -13,6 +13,7 @@ header{
 .header{
   &-logo{
     padding: 10px 10px;
+    cursor: pointer;
   }
 
   &-tagline{
@@ -71,6 +72,7 @@ header{
 
     &-button{
       margin-right: 20px;
+      font-size: 13px;
     }
   }
 }

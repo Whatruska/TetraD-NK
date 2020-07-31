@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react";
 import logo from "../images/logo.png"
 
-const Header = () => (
+const Header = ({openModal}) => (
   <header>
     <div className="header-logo">
         <Link to="/">
@@ -14,7 +14,7 @@ const Header = () => (
               Быстро. Выгодно. Качественно.
           </div>
       </div>
-      <button className="header-button">Обсудить проект</button>
+      <button className="header-button" onClick={openModal}>Обсудить проект</button>
   </header>
 )
 

@@ -6,7 +6,8 @@ import scrap from "../images/scpars.png";
 import mac from "../images/mac-2.png";
 import screen from "../images/screen.png";
 
-export default function Offer() {
+export default function Offer({handleSubmit}) {
+    let contactsRef = React.createRef();
     return (
     <div className="offer">
         <div className="offer-main">
@@ -24,10 +25,10 @@ export default function Offer() {
                 </div>
             </div>
             <div className="offer-main-cta">
-                <h6>Оставьте контакты и получите скидку в 10%</h6>
+                <h6>Оставьте контакты и мы перезвоним</h6>
                 <div className="offer-main-cta-input-wrapper">
-                    <input type="text" name="email" placeholder="Введите контакты"/>
-                    <button className="offer-callback-btn">Получить скидку</button>
+                    <input type="text" name="email" ref={contactsRef} placeholder="Введите контакты"/>
+                    <button className="offer-callback-btn" onClick={(e) => handleSubmit(contactsRef)}>Получить консультацию</button>
                 </div>
             </div>
         </div>
