@@ -10,6 +10,7 @@ import ClockCircleOutlined from "@ant-design/icons/lib/icons/ClockCircleOutlined
 import DollarCircleOutlined from "@ant-design/icons/lib/icons/DollarCircleOutlined";
 export default function Case(props) {
     const elem = props.pageContext.elem;
+    if (!elem) return (<></>);
     const tasks = elem.tasks.map(task => task.task).filter(task => task !== null && task !== undefined);
     let document = elem.document[0];
     if (document.url.toString().indexOf("http") !== 0){

@@ -1,6 +1,4 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Link } from "gatsby";
 import graph from "../images/graph.jpeg";
 import scrap from "../images/scpars.png";
 import mac from "../images/mac-2.png";
